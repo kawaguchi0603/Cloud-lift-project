@@ -1,4 +1,4 @@
-[gemini-code-1782362759965.md](https://github.com/user-attachments/files/29322124/gemini-code-1782362759965.md)# GCPクラウドリフト・高可用性Webシステム構築プロジェクト
+# GCPクラウドリフト・高可用性Webシステム構築プロジェクト
 
 オンプレミス環境（仮想環境）で稼働していたLAMPスタックのWebアプリケーションを、GCP（Google Cloud Platform）上へ移行（クラウドリフト）し、アクセス集中やサーバー障害に耐えうる「高可用性・冗長化ネットワーク」をインフラ自動化ツール（IaC）を用いて構築したプロジェクトです。
 
