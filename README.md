@@ -6,8 +6,6 @@
 
 ## 1. システムアーキテクチャ図
 
-[Uploading ge## 1. システムアーキテクチャ図
-
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/223759ed-b765-4280-96ad-c49c528c7173" />
 
 ### 主な特徴
