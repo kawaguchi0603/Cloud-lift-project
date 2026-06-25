@@ -1,4 +1,4 @@
-# GCPクラウドリフト・高可用性Webシステム構築プロジェクト
+[gemini-code-1782362759965.md](https://github.com/user-attachments/files/29322124/gemini-code-1782362759965.md)# GCPクラウドリフト・高可用性Webシステム構築プロジェクト
 
 オンプレミス環境（仮想環境）で稼働していたLAMPスタックのWebアプリケーションを、GCP（Google Cloud Platform）上へ移行（クラウドリフト）し、アクセス集中やサーバー障害に耐えうる「高可用性・冗長化ネットワーク」をインフラ自動化ツール（IaC）を用いて構築したプロジェクトです。
 
@@ -6,9 +6,10 @@
 
 ## 1. システムアーキテクチャ図
 
-## 1. システムアーキテクチャ図
+[Uploading ge## 1. システムアーキテクチャ図
 
-![GCP Web System Architecture](./architecture.png)
+![GCP Web System Architecture](./architecture.png)mini-code-1782362759965.md…]()
+
 
 ### 主な特徴
 * **セキュアな閉域網通信（オーバーレイネットワーク）:** 外部およびサーバー間の通信には **Tailscale（VPN）** を採用し、全サーバーをプライベートIP空間（`100.x.x.x`）に閉じ込めることで、強固なセキュリティを確保。
