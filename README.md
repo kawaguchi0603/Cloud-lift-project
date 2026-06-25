@@ -8,8 +8,7 @@
 
 [Uploading ge## 1. システムアーキテクチャ図
 
-![GCP Web System Architecture](./architecture.png)mini-code-1782362759965.md…]()
-
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/223759ed-b765-4280-96ad-c49c528c7173" />
 
 ### 主な特徴
 * **セキュアな閉域網通信（オーバーレイネットワーク）:** 外部およびサーバー間の通信には **Tailscale（VPN）** を採用し、全サーバーをプライベートIP空間（`100.x.x.x`）に閉じ込めることで、強固なセキュリティを確保。
