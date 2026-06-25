@@ -36,13 +36,9 @@
 
 ## 4. 構築・検証手順
 
-### ① インフラのプロビジョニング (Terraform)
-```bash
-cd terraform/
-terraform init
-terraform apply -auto-approve
 
-## 6. 開発において苦労した点と解決方法（トラブルシューティング）
+
+## 5. 開発において苦労した点と解決方法（トラブルシューティング）
 
 本プロジェクトの構築において、IaC（Infrastructure as Code）の整合性とミドルウェアの仕様の組み合わせにより発生した、以下の2つの大きな技術的課題を自力で解決しました。
 
@@ -58,3 +54,9 @@ terraform apply -auto-approve
   エラーを追跡したところ、Ansibleで共通の設定ファイル（`mysqld.cnf`）を一括配布したため、本来サーバーごとに一意（一万未満の異なる数値）であるべき `server-id` が、マスターとスレーブで全く同じ（`1`）になってしまい、MySQLのループ防止機能に引っかかっていることが原因だと突き止めました。
 * **解決方法:**
   手動でSQL文を実行して暫定的に `server_id = 2` に書き換えて安全性を検証・実証したのち、この手動介入を排除するためにAnsibleプレイブック（`site3_replication.yml`）を根本的に修正しました。スレーブ側のタスク内（`Enable GTID on Slave`）のループ処理に `server-id = 2` を動的に書き換える `lineinfile` タスクを組み込み、ミドルウェアの再起動ハンドラー（`flush_handlers`）と連動させました。これにより、今後何度プレイブックを実行しても、完全に手動介入なしで `Yes` の状態（正常同期）まで一発で自動構築できる、堅牢な冪等性（べきとうせい）を持ったIaCスクリプトへと昇華させました。
+
+### 6. インフラのプロビジョニング (Terraform)
+```bash
+cd terraform/
+terraform init
+terraform apply -auto-approve
